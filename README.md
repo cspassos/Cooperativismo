@@ -27,7 +27,7 @@ Foi desenvolvido uma api de votação na qual será utilzada no cooperativismo. 
 
 ```
 $ git clone https://github.com/cspassos/Cooperativismo
-$ Dentro do projeto con figurar o application.properties de acordo ao seu PostgreSQL;
+$ Dentro do projeto, configurar o application.properties de acordo ao seu PostgreSQL:
 $ application.properties : colocar a porta do seu PostgreSQL no "spring.datasource.url";
 	* OBS: Geralmente a porta vai ser a 5432;
 $ application.properties : colocar username e password do seu PostgreSQL;
