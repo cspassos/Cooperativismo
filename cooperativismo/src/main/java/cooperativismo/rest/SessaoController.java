@@ -15,32 +15,37 @@ import org.springframework.web.bind.annotation.RestController;
 
 import cooperativismo.model.entity.Sessao;
 import cooperativismo.service.SessaoService;
-import lombok.RequiredArgsConstructor;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 
+@Api(value = "Sessao")
 @RestController
 @RequestMapping("/sessao")
-@RequiredArgsConstructor//Cria um construtor com os argumentos obrigatorios
 public class SessaoController {
 	
 	@Autowired
 	private SessaoService sessaoService;
 	
+	@ApiOperation(value = "Salvar Sessao")
 	@PostMapping("pauta/{idPauta}")
 	@ResponseStatus(HttpStatus.CREATED)
 	public Sessao criarSessao(@PathVariable Long idPauta, @RequestBody Sessao sessao) {
 		return sessaoService.criarSessao(idPauta, sessao);
 	}
 	
+	@ApiOperation(value = "Buscar sessao por ID")
 	@GetMapping("{id}")
 	public Sessao buscarPorId(@PathVariable Long id) {
 		return sessaoService.buscarPorId(id);
 	}
 	
+	@ApiOperation(value = "Buscar todas as sessoes")
 	@GetMapping
 	public List<Sessao> buscarTodasSessoes() {
 		return sessaoService.buscarTodasSessoes();
 	}
 
+	@ApiOperation(value = "Excluir Sessao")
 	@DeleteMapping("{id}")
 	public void excluirSessao(@PathVariable Long id) {
 		sessaoService.excluirSessao(id);

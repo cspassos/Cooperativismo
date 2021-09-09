@@ -17,32 +17,37 @@ import org.springframework.web.bind.annotation.RestController;
 
 import cooperativismo.model.entity.Pauta;
 import cooperativismo.service.PautaService;
-import lombok.RequiredArgsConstructor;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 
+@Api(value = "Pauta")
 @RestController
 @RequestMapping("/pauta")
-@RequiredArgsConstructor//Cria um construtor com os argumentos obrigatorios
 public class PautaController {
 	
 	@Autowired
 	private PautaService pautaService;
 	
+	@ApiOperation(value = "Salvar Pauta")
 	@PostMapping
-	@ResponseStatus(HttpStatus.CREATED)
+	@ResponseStatus(code = HttpStatus.CREATED)
 	public Pauta salvar(@Valid @RequestBody Pauta pauta) {
 		return pautaService.salvar(pauta);
 	}
 	
+	@ApiOperation(value = "Buscar pauta por ID")
 	@GetMapping("{id}")
 	public Pauta buscarPorId(@PathVariable Long id) {
 		return pautaService.buscarPorId(id);
 	}
 	
+	@ApiOperation(value = "Buscar todas as pautas")
 	@GetMapping
 	public List<Pauta> buscarTodasPautas() {
 		return pautaService.buscarTodasPautas();
 	}
 	
+	@ApiOperation(value = "Excluir Pauta")
 	@DeleteMapping("{id}")
 	public void excluirPauta(@PathVariable Long id) {
 		pautaService.excluirPauta(id);

@@ -13,16 +13,18 @@ import org.springframework.web.bind.annotation.RestController;
 
 import cooperativismo.model.entity.Voto;
 import cooperativismo.service.BonusCpfVotoService;
-import lombok.RequiredArgsConstructor;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 
+@Api(value = "Tarefa Bonus CPF")
 @RestController
 @RequestMapping("/bonus-cpf-voto")
-@RequiredArgsConstructor//Cria um construtor com os argumentos obrigatorios
 public class BonusCpfVotoController {
 
 	@Autowired
 	private BonusCpfVotoService bonusCpfVotoService;
 	
+	@ApiOperation(value = "Salvar Voto (Servico de CPF)")
 	@PostMapping("pauta/{idPauta}/sessao/{idSessao}")
 	@ResponseStatus(HttpStatus.CREATED)
 	public Voto salvarVotoBonusCpf(@PathVariable Long idPauta, @PathVariable Long idSessao, @Valid @RequestBody Voto voto) {
