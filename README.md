@@ -35,4 +35,9 @@ $ Executar um maven clean;
 $ Executar um maven update;
 $ Subir o projeto;
 
+### SWAGGER
+```
+http://localhost:8080/swagger-ui/index.html#/
+```
+
 
