@@ -13,8 +13,9 @@ Foi desenvolvido uma api de votação na qual será utilzada no cooperativismo. 
 
 * Tarefa Bônus 1 - Integração com sistemas externos;
 * Tarefa Bônus 4 - Versionamento da API:
-	R= Versionaria atraves do número da versão nas URLs da API, como exemplo utilizando o v1 ex: http://localhost:8080/v1/sessao .
-
+```
+	Resposta Versionamento: Versionaria atraves do número da versão nas URLs da API, como exemplo utilizando o v1 ex: http://localhost:8080/v1/sessao .
+```
 ## Tecnologias
 
 * Java 8;
@@ -32,3 +33,5 @@ $ application.properties : colocar a porta do seu PostgreSQL no "spring.datasour
 $ application.properties : colocar username e password do seu PostgreSQL;
 $ Executar um maven clean;
 $ Executar um maven update;
+
+
