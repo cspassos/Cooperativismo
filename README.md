@@ -33,5 +33,6 @@ $ application.properties : colocar a porta do seu PostgreSQL no "spring.datasour
 $ application.properties : colocar username e password do seu PostgreSQL;
 $ Executar um maven clean;
 $ Executar um maven update;
+$ Subir o projeto;
 
 
